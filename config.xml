@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.minras.try_template" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>The PoC</name>
+    <description>The PoC</description>
+    <author email="mail@minras.com" href="http://minras.com">
+        Andrii "Minras" Shchurkov
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <icon src="www/icon.png" />
+    <preference name="android-minSdkVersion" value="21" />
+</widget>
