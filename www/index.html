@@ -7,6 +7,36 @@
     <link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css" />
     <script type="text/javascript" src="libs/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="libs/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="libs/jquery.loadTemplate-1.5.0.min.js"></script>
+
+    <script type="text/javascript" src="js/log.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        app.initialize();
+        $("#page-tabs").tabs({
+            activate: function(event, ui) {
+                if ('tab-logs' == ui.newPanel.attr('id')) {
+                    var container = $('#tab-logs-content').empty();
+                    var i = app.log.list().length;
+                    if (!i) {
+                        container.html($('#log-msg-empty').html());
+                        return;
+                    }
+                    var tpl = $('#log-msg-template').html();
+                    for(i=i-1; i>=0; i--) {
+                        console.log(i);
+                        var el = $('<div />').loadTemplate($("#log-msg-template"), app.log.get(i));
+                        container.append(el.html());
+                        console.log($(el).text());
+                    }
+
+                }
+            }
+        });
+    });
+    </script>
+
 </head> 
 <body>
     <div data-role="page" id="app-page">
@@ -15,7 +45,7 @@
         </div>
 
         <div data-role="content">
-            <div data-role="tabs">
+            <div data-role="tabs" id="page-tabs">
                 <div id="navbar" data-role="navbar" data-iconpos="top">
                     <ul>
                         <li><a id="navbar-app-btn" href="#tab-app" data-icon="eoh-bus">App</a></li>
@@ -25,13 +55,13 @@
                 </div>
 
                 <div id="tab-app">
-                    Tab1
+                    <div id="tab-app-content"></div>
                 </div>
                 <div id="tab-settings">
-                    Tab2
+                    <div id="tab-settings-content"></div>
                 </div>
                 <div id="tab-logs">
-                    Tab3
+                    <div id="tab-logs-content"></div>
                 </div>
             </div>
         </div>
@@ -41,5 +71,16 @@
         </div>
     </div>
 
+    <script type="text/html" id="log-msg-template">
+        <div>
+            <span data-content="severity"></span>: <span data-content="message"></span>
+        </div>
+    </script>
+
+    <script type="text/html" id="log-msg-empty">
+        <div>
+            The log is empty
+        </div>
+    </script>
 </body>
 </html>
