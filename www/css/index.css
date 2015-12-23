@@ -25,7 +25,18 @@ body {
     width:100%;
 }
 
-
+/* custom icons */
 .ui-icon-eoh-bus {
     background: url("../img/icon-22-bus.png") 22px 22px no-repeat;
+}
+
+/* page layout */
+#page-content {
+    padding: 0;
+}
+#page-tabs {
+    padding: 0;
+}
+#page-tabs-container {
+    padding: 1em;
 }
