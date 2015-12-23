@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <script type="text/javascript" src="libs/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="libs/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="libs/jquery.loadTemplate-1.5.0.min.js"></script>
@@ -24,13 +25,13 @@
             <h1>The PoC</h1>
         </div>
 
-        <div data-role="content">
+        <div data-role="content" id="page-content">
             <div data-role="tabs" id="page-tabs">
                 <div id="navbar" data-role="navbar" data-iconpos="top">
                     <ul>
                         <li><a id="navbar-app-btn" href="#tab-app" data-icon="eoh-bus" class="ui-btn-active">App</a></li>
-                        <li><a id="navbar-settings-btn" href="#tab-settings" data-icon="eoh-settings">Settings</a></li>
-                        <li><a id="navbar-logs-btn" href="#tab-logs" data-icon="flat-menu">Logs</a></li>
+                        <li><a id="navbar-settings-btn" href="#tab-settings" data-icon="gear">Settings</a></li>
+                        <li><a id="navbar-logs-btn" href="#tab-logs" data-icon="info">Logs</a></li>
                     </ul>
                 </div>
 
