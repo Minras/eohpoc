@@ -14,26 +14,6 @@
     <script type="text/javascript">
     $(document).ready(function() {
         app.initialize();
-        $("#page-tabs").tabs({
-            activate: function(event, ui) {
-                if ('tab-logs' == ui.newPanel.attr('id')) {
-                    var container = $('#tab-logs-content').empty();
-                    var i = app.log.list().length;
-                    if (!i) {
-                        container.html($('#log-msg-empty').html());
-                        return;
-                    }
-                    var tpl = $('#log-msg-template').html();
-                    for(i=i-1; i>=0; i--) {
-                        console.log(i);
-                        var el = $('<div />').loadTemplate($("#log-msg-template"), app.log.get(i));
-                        container.append(el.html());
-                        console.log($(el).text());
-                    }
-
-                }
-            }
-        });
     });
     </script>
 
