@@ -6,12 +6,15 @@ var Log = (function () {
 
     function createInstance() {
         return {
-            add: function (msg, severity) {
+            add: function(msg, severity) {
                 var _msg = _build_message(msg, severity);
                 _logs.push(_msg);
             },
-            list: function () {
+            list: function() {
                 return _logs;
+            },
+            get: function(i) {
+                return _logs[i];
             }
         };
     }
