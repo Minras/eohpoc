@@ -16,3 +16,6 @@ Using Template
 * Create a new Phonegap 3.x project from the commmand line.
 * Dump this repo into the www folder of your new PhoneGap project.
 
+Some Resources
+==============
+* http://stackoverflow.com/questions/9413734/how-to-use-navbars-as-tabs-in-jquery-mobile
