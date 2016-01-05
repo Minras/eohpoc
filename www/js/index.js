@@ -1,8 +1,16 @@
 var app = {
     log: Log.getInstance(),
 
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        // document.addEventListener('deviceready', this.onDeviceReady, false);
+        this.log.add('Events initialized');
+    },
+
     // Application Constructor
     initialize: function() {
+        this.log.add("Application initialization started");
         this.bindEvents();
         this.init_page_behaviour();
         this.log.add("Application initialization finished");
@@ -28,20 +36,5 @@ var app = {
                 }
             }
         });
-    },
-
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-
-    // Phonegap is now ready...
-    onDeviceReady: function() {
-        this.log.add("Device is ready");
-
-        // Start adding your code here....
     }
 };
