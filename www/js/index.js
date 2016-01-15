@@ -33,7 +33,18 @@ var app = {
                         container.append(el.html());
                     }
 
-                }
+                } else if ('tab-settings' == ui.newPanel.attr('id')) {
+                    estimote.beacons.startRangingBeaconsInRegion(
+                        {}, // Empty region matches all beacons.
+                        function(result) {
+                            this.log.add('*** Beacons ranged ***');
+                            estimote.beacons.printObject(result);
+                        },
+                        function(errorMessage) {
+                            this.log.add('Ranging error: ' + errorMessage);
+                        }
+                    )
+;                }
             }
         });
     }
