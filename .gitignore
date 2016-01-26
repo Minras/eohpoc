@@ -1,4 +1,9 @@
 platforms/
+plugins
+
+#eclipse IDE
+.project
+
 
 # JetBrains IDE
 .idea/

@@ -1,12 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.minras.try_template" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.minras.try_template" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="me.app.id" version="1.0.0">
     <name>The PoC</name>
     <description>The PoC</description>
     <author email="mail@minras.com" href="http://minras.com">
         Andrii "Minras" Shchurkov
     </author>
-    <content src="index.html" />
-    <access origin="*" />
-    <icon src="www/icon.png" />
-    <preference name="android-minSdkVersion" value="21" />
+    <content src="index.html"/>
+    <access origin="*"/>
+    <icon src="www/icon.png"/>
+    <preference name="android-minSdkVersion" value="21"/>
+    <gap:plugin name="cordova-plugin-bluetoothle" source="npm"/>
+    <plugin name="com.randdusing.bluetoothle" spec="2.0.0" source="pgb" />
+    <plugin name="com.jkhax0r.bluetoothle" spec="1.0.1" source="pgb" />
+
+    <gap:config-file platform="android" parent="/manifest">
+        <application android:debuggable="true"/>
+    </gap:config-file>
+
 </widget>

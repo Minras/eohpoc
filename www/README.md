@@ -7,7 +7,7 @@ Pre-Requisites
 =============
 
 * Have Phonegap / Cordova installed and setup in your environment.
-* 
+*
 
 Using Template
 ==============
